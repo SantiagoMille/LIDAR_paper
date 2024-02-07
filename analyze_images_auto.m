@@ -1,7 +1,7 @@
 clc;
 clear;
-name = "C:\Users\santi\OneDrive\Escritorio\Gao Lab\pictures_co-culture\MB_FULL___middle-5-11-2-5-17-mb-full\green_final.tif";
-dic  = "C:\Users\santi\OneDrive\Escritorio\Gao Lab\pictures_co-culture\MB_FULL___middle-5-11-2-5-17-mb-full\";
+name = ""; %%Path to TIF image
+dic  = ""; %%Path to directory containing image
 imageGreen = imread(name);
 
 figure(1);
@@ -9,8 +9,8 @@ imshow(imageGreen, []);
 impixelinfo;
 axis on;
 hold on;
-N=20000;
-it = 170; % number of co-centric
+N=20000; %Number of values captured per co-centric line
+it = 170; % number of co-centric lines
 cx_all = zeros(it, N);
 cy_all = zeros(it, N);
 mask_all = zeros(it, N);
@@ -33,7 +33,7 @@ x1h = cxv(ceil(length(cxv)/2),1);
 y1h = cyv(ceil(length(cyv)/2),1);
 plot(x1h, y1h, '.');
 
-message = sprintf('Choose center of circle');
+message = sprintf('Click on the center of the circular pattern');
 text(5, 250, message, 'Color', 'r', 'FontSize', 12);
 uiwait(msgbox(message));
 [cx, cy, mask] = improfile();
@@ -55,7 +55,6 @@ for j=1:it
         disp('Stop!');
     end
     mask_all(j,:) = data;
-    %mask_all(j,N) = 255;
     means(j) = mean(mask_all(j,:));
     stds(j) = std(mask_all(j,:));
 end
@@ -80,7 +79,6 @@ writematrix(mask_all, strcat(dic,'pixel_vals_6-29-23.csv'))
 writematrix(means, strcat(dic,'pixel_means_6-29-23.csv'))
 writematrix(distances, strcat(dic,'distances-6-29-23.csv'))
 
-%means(means<median(means))=0;
 means = means - min(means);
 writematrix(means, strcat(dic,'pixel_means_norm_6-29-23.csv'))
 figure(4);
