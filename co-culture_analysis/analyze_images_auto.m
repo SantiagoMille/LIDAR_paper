@@ -1,10 +1,10 @@
 clc; clear;
 
-dic  = "./Sec/Extra/"; %directory to save files to
+dic  = "./test_data/"; %directory to save files to
 %Files to read
 name = strcat(dic,"analysis.tif");
-blue = strcat(dic,"blue2analysis.tif");
-red = strcat(dic,"red2analysis.tif");
+blue = strcat(dic,"blue4analysis.tif");
+red = strcat(dic,"red4analysis.tif");
 
 imageGreen = imread(name); 
 imageBlue = imread(blue);
