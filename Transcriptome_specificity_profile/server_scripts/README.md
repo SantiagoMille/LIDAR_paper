@@ -1,4 +1,4 @@
-Modify all scripts accordingly:
+Modify all scripts accordingly (Python 3.12.4):
 
 1. First generate genome with genGenome.sbatch -> Using GRCh38 (Genocode V46) and custom sequences (see Methods section in the manuscript)
 2. Align the sequences using alignment.sbatch (STAR 2.7.10b)
@@ -15,6 +15,7 @@ samtools view -@ 6 -s 0.753 -b -h -o NG3.downsampled.bam NG3_markdup.bam
 
 **The second command might have to be run using SLURM: use downsample.sbatch 
 
-7. Run REDI using run_redi.sbatch (eg., sbatch run_red.sbatch eLIDAR.downsampled.bam)
-8. Transfer resulting tab file to local computer and run (python preprocess_redi.py files_to_process)
-9. Run the python notebook to calculate statistically significant edit sites and generate the plots.
+7. Run REDItools (v1) using run_redi.sbatch (eg., sbatch run_red.sbatch eLIDAR.downsampled.bam)
+    https://github.com/BioinfoUNIBA/REDItools/blob/master/README_1.md
+9. Transfer resulting tab file to local computer and run (python preprocess_redi.py files_to_process)
+10. Run the python notebook to calculate statistically significant edit sites and generate the plots.
