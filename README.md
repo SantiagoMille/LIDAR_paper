@@ -7,7 +7,7 @@ Requirements for each of the analyses:
 1. Co-culture picture analysis [Python 3.8.12, Numpy 1.21.2,  Pandas 1.3.5, natsort 8.2.0, matplotlib 3.7.5,  MATLAB R2023b (23.2.0.2668659)]
 2. Amplicon RNA editing rates [Python 3.8.12, Numpy 1.21.2]
    - FLASH v1.2.11 (https://github.com/ebiggers/flash?tab=readme-ov-file) for combining pairs of reads. Installed using the instructions in the Github repository. 
-3. Transcriptome-wide specificity profiles [Python 3.12.2, Pandas 2.2.2, Numpy 2.0.1, Matplotlib 3.9.1.post1, scipy 1.14.1, statsmodels 0.14.2]
+3. Transcriptome-wide specificity profiles [Python 3.12.2, Pandas 2.2.2, Numpy 2.0.1, Matplotlib 3.9.1.post1, scipy 1.14.1, statsmodels 0.14.2, samtools 1.16.1 (using htslib 1.16)]
      - To obtain the files used to run the scripts in this folder pleas see README inside server_scripts folder.
      - Server running CentOS Linux version = 7 (Core) was used. GCC 4.8.5 20150623.
 
